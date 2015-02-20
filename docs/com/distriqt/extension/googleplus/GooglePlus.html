@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><meta name="keywords" content="GooglePlus,com.distriqt.extension.googleplus.GooglePlus,EXT_CONTEXT_ID,IMPLEMENTATION_DEFAULT,VERSION,VERSION_DEFAULT,aboutMe,birthday,braggingRights,currentLocation,displayName,familyName,gender,givenName,id,image,imageUrl,isSupported,language,nickName,relationshipStatus,service,shouldFetchEmail,shouldFetchId,shouldFetchUser,tagline,text,url,url,version,disconnect,dispatchEvent,dispose,getPerson,getUserEmail,getUserId,init,initialise,isGooglePlusAppInstalled,isSignedIn,share,signIn,signOut"><title>com.distriqt.extension.googleplus.GooglePlus</title><script src="../../../../AC_OETags.js" type="text/javascript"></script></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'GooglePlus - distriqt // GooglePlus';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">distriqt // GooglePlus Native Extension Documentation</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?com/distriqt/extension/googleplus/GooglePlus.html&amp;com/distriqt/extension/googleplus/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">GooglePlus</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a>&nbsp;| <a href="#includeExamplesSummary">Examples</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("GooglePlus"); titleBar_setSubNav(true,true,false,false,false,false,false,false,true,true,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">com.distriqt.extension.googleplus</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public final   class  GooglePlus</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">GooglePlus  <img src="../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> flash.events.EventDispatcher</td></tr></table><p></p><p></p><p></p>	
+	              <p>This class represents the googleplus extension.</p>
+	 
+	              <p></p>
+               <p></p>
+	              <b>Android Setup</b>
+	 
+	              <p>
+	 The following information is taken from the google help pages <a href="http://developers.google.com/+/mobile/android/getting-started" target="">here</a>. 
+	 You should refer to them if anything isn't clear in the following instructions.
+	 </p>
+	 
+	              <ol>
+	                 <li>In the <a href="http://code.google.com/apis/console" target="">Google APIs Console</a>, create an API project for your application.</li>
+	                 <li>In the Services pane, enable the Google+ API and any other APIs that your app requires.</li>
+	                 <li>In the API Access pane, create an OAuth 2.0 client ID by clicking Create an OAuth 2.0 Client ID :
+	 	<ul>
+	 		                    <li>Type a product name in the dialog box that displays, and click Next. Providing a product logo and home page URL are optional.</li>
+	 		                    <li>Choose Installed application as your Application type and select Android as type.</li>
+	 		                    <li>In the Package name field, enter your Android's app's package name.</li>
+	 		                    <li>In a terminal, run the the Keytool utility to get the SHA-1 fingerprint of the certificate.</li>
+	 	                  </ul>
+	                 </li>
+	              </ol>
+	 
+	              <p></p>
+	              <p>
+                  <i>Getting the SHA1 fingerprint</i>
+               </p>
+	 
+	              <p>
+	 In order to correctly sign your packaged application you will be using a p12 certificate. You'll need to
+	 extract the SHA1 signature of this certificate in order to complete the setup of the OAuth Client ID.
+	 </p>
+	 
+	              <p>
+	 To do this you can use the keytool utility:
+	 </p>
+	 
+	              <code>keytool -exportcert -keystore YOUR_CERTIFICATE.p12 -storepass YOUR_PASSWORD  -list -v -storetype PKCS12</code>
+	 
+	              <p>
+	 In order to correctly debug an AIR application in Flash Builder you have to setup your API access with the SHA1 signature from the AIR Debug Certificate. 
+	 This is found in the location below.
+	 </p>
+	 
+	              <code>keytool -exportcert -keystore /Applications/Adobe\ Flash\ Builder\ 4.7/eclipse/plugins/com.adobe.flexide.multiplatform.android_4.7.0.349722/resources/debug-certificate-android.p12 -storepass debug  -list -v -storetype PKCS12</code>
+	 
+	              <p></p>
+	 
+	              <p>
+                  <i>Manifest Additions</i>
+               </p>
+	 
+	              <p>
+	 On Android you'll need to add the following to the manifest additions.
+	 </p>
+	 
+	              <div class="listing"><pre>
+     lt;uses-permission android:name="android.permission.INTERNET"/&gt;
+     lt;uses-permission android:name="android.permission.GET_ACCOUNTS" /&gt;
+     lt;uses-permission android:name="android.permission.USE_CREDENTIALS" /&gt;
+     
+     lt;application&gt;
+     &lt;meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" /&gt;
+     &lt;activity android:name="com.distriqt.extension.googleplus.activities.GooglePlusActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" /&gt;
+     lt;/application&gt;
+     </pre></div>
+	 
+	 
+	              <p></p>
+               <p></p>
+	              <b>iOS Setup</b>
+	 
+	              <p>
+	 The following information is taken from the google help pages <a href="http://developers.google.com/+/mobile/ios/getting-started" target="">here</a>.
+	 You should refer to them if anything isn't clear in the following instructions.
+	 </p>
+	 
+	              <ol>
+	                 <li>In the <a href="http://developers.google.com/console" target="">Google APIs Console</a>, select Create from the pull-down menu on the left, enter a project name (such as "iOS App"), and click the Create project button.</li>
+	                 <li>In the <a href="http://code.google.com/apis/console/?api=plus#:services" target="">Services pane</a>, enable the Google+ API and any other APIs that your app requires by turning them on. If you plan to use other APIs, turn those on as well.</li>
+	                 <li>In the <a href="http://code.google.com/apis/console/#:access" target="">API Access pane</a>, click Create an OAuth 2.0 Client ID.
+	 	<ul>
+	 		                    <li>In the Product name field, enter a name for your application (such as "Sample"), and click Next. Providing a product logo is optional.</li>
+	 		                    <li>In the Create Client ID dialog box, shown below, do the following:
+	 			<ul>
+	 				                        <li>Select Installed application for the Application type.</li>
+	 				                        <li>Select iOS.</li>
+	 				                        <li>In the Bundle ID field, enter the bundle identifier from your application's project summary.</li>
+	 				                        <li>If your app is published in the Apple iTunes App Store, enter your app's App Store identifier in the App Store ID field. You can determine the ID from the "id" part of your app's URL on iTunes website: http://itunes.apple.com/us/app/id[YOUR_APP_STORE_ID]</li>
+	 				                        <li>Click the Create client ID button.</li>
+	 			                      </ul>
+	 		                    </li>
+	 	                  </ul>
+	                 </li>
+	                 <li>In the API Access pane, locate the section Client ID for installed applications and note or copy the Client ID that you will need later.</li>
+	              </ol>
+	 
+	 
+	              <p>
+                  <i>Setting the bundle url</i>
+               </p>
+	 
+	              <p>
+	 You'll need to add a URL type to your application and enter your bundle ID as the identifier and scheme.
+	 You do this by adding the following to the InfoAdditions node in your application descriptor, 
+	 replacing YOUR_BUNDLE_ID with the Bundle ID you entered into the API Access pane previously.
+	 </p>
+	 
+	              <div class="listing"><pre>
+     &lt;iPhone&gt;
+         &lt;InfoAdditions&gt;&lt;![CDATA[
+             &lt;key&gt;UIDeviceFamily&lt;/key&gt;
+             &lt;array&gt;
+                 &lt;string&gt;1&lt;/string&gt;
+             &lt;/array&gt;
+             
+             &lt;key&gt;CFBundleURLTypes&lt;/key&gt;
+             &lt;array&gt;
+                 &lt;dict&gt;
+                     &lt;key&gt;CFBundleURLSchemes&lt;/key&gt;
+                     &lt;array&gt;
+                         &lt;string&gt;YOUR_BUNDLE_ID&lt;/string&gt;
+                     &lt;/array&gt;
+                     &lt;key&gt;CFBundleURLName&lt;/key&gt;
+                     &lt;string&gt;YOUR_BUNDLE_ID&lt;/string&gt;
+                 &lt;/dict&gt;
+             &lt;/array&gt;
+         
+         ]]&gt;&lt;/InfoAdditions&gt;
+         &lt;Entitlements&gt;
+             &lt;![CDATA[
+             ]]&gt;
+         &lt;/Entitlements&gt;
+     &lt;/iPhone&gt;
+     </pre></div>
+	 
+	 
+	 
+	 
+	           <p></p><p><a href="#includeExamplesSummary">View the examples</a></p><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#isSupported" class="signatureLink">isSupported</a> : Boolean<div class="summaryTableDescription">[static] [read-only] 
+		 Whether the current device supports the extensions functionality
+		 </div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#service" class="signatureLink">service</a> : <a href="../../../../com/distriqt/extension/googleplus/GooglePlus.html">GooglePlus</a><div class="summaryTableDescription">[static] [read-only] 
+		 The singleton instance of the GooglePlus class.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#version" class="signatureLink">version</a> : String<div class="summaryTableDescription">[read-only] 
+		 
+		 The version string of the native extension.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#GooglePlus()" class="signatureLink">GooglePlus</a>()</div><div class="summaryTableDescription">
+		 Constructor
+		 
+		 You should not call this directly, but instead use the singleton access
+		 </div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#disconnect()" class="signatureLink">disconnect</a>():Boolean</div><div class="summaryTableDescription">
+		 
+		 
+		 </div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#dispatchEvent()" class="signatureLink">dispatchEvent</a>(event:Event):Boolean</div><div class="summaryTableDescription">[override] 
+ Overrides the default dispatch event to check if the developer id is valid.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#dispose()" class="signatureLink">dispose</a>():void</div><div class="summaryTableDescription">
+		 
+		 Disposes the extension and releases any allocated resources.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getPerson()" class="signatureLink">getPerson</a>():<a href="../../../../com/distriqt/extension/googleplus/Person.html">Person</a></div><div class="summaryTableDescription">
+		 
+		 Retrieves the information about the user who is signed in.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getUserEmail()" class="signatureLink">getUserEmail</a>():String</div><div class="summaryTableDescription">
+		 
+		 Retrieves the Google user's email
+		 
+		 
+		 </div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getUserId()" class="signatureLink">getUserId</a>():String</div><div class="summaryTableDescription">
+		 
+		 Retrieves the Google user ID
+		 
+		 
+		 </div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#init()" class="signatureLink">init</a>(key:String):void</div><div class="summaryTableDescription">[static] 
+		 Initialises the extension class for use with the provided key.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#initialise()" class="signatureLink">initialise</a>(clientId:String):Boolean</div><div class="summaryTableDescription">
+		 
+		 This function initialises the Google+ service.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isGooglePlusAppInstalled()" class="signatureLink">isGooglePlusAppInstalled</a>():Boolean</div><div class="summaryTableDescription">
+		 
+		 Determines whether the Google+ application is installed on the device.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isSignedIn()" class="signatureLink">isSignedIn</a>():Boolean</div><div class="summaryTableDescription">
+		 
+		 Determines if there is already a user signed into the application.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#share()" class="signatureLink">share</a>(post:<a href="../../../../com/distriqt/extension/googleplus/Post.html">Post</a>):void</div><div class="summaryTableDescription">
+		 
+		 Displays a native share dialog for the user to share a post to their Google+ circles.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#signIn()" class="signatureLink">signIn</a>(options:<a href="../../../../com/distriqt/extension/googleplus/SignInOptions.html">SignInOptions</a> = null):Boolean</div><div class="summaryTableDescription">
+		 
+		 Starts the sign in process.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#signOut()" class="signatureLink">signOut</a>():Boolean</div><div class="summaryTableDescription">
+		 
+		 Starts the sign out process.</div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr></table></div><a name="constantSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Constants</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableConstant"><tr><th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#EXT_CONTEXT_ID" class="signatureLink">EXT_CONTEXT_ID</a> : String = com.distriqt.GooglePlus<div class="summaryTableDescription">[static] </div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#IMPLEMENTATION_DEFAULT" class="signatureLink">IMPLEMENTATION_DEFAULT</a> : String<div class="summaryTableDescription">[static] </div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#VERSION" class="signatureLink">VERSION</a> : String = 1<div class="summaryTableDescription">[static] </div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#VERSION_DEFAULT" class="signatureLink">VERSION_DEFAULT</a> : String = 0<div class="summaryTableDescription">[static] </div></td><td class="summaryTableOwnerCol">GooglePlus</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="isSupported"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isSupported</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>isSupported:Boolean</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 Whether the current device supports the extensions functionality
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get isSupported():Boolean</code><br/></div><a name="propertyDetail"></a><a name="service"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">service</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>service:<a href="../../../../com/distriqt/extension/googleplus/GooglePlus.html">GooglePlus</a></code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 The singleton instance of the GooglePlus class.
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get service():<a href="../../../../com/distriqt/extension/googleplus/GooglePlus.html">GooglePlus</a></code><br/><br/><span class="label"> Throws </span><br/><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Error </code> &mdash; If there was a problem creating or accessing the extension, or if the key is invalid
+		 </td></tr></table></div><a name="propertyDetail"></a><a name="version"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">version</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>version:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 <p>
+		 The version string of the native extension. This will be of the format:
+		 </p>
+		 <pre>
+		 [main version].[base version].[implementation].[native version]
+		 </pre>
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get version():String</code><br/></div><a name="constructorDetail"></a><div class="detailSectionHeader">Constructor Detail</div><a name="GooglePlus()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">GooglePlus</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">Constructor</td></tr></table><div class="detailBody"><code>public function GooglePlus()</code><p></p><p>
+		 Constructor
+		 
+		 You should not call this directly, but instead use the singleton access
+		 </p></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="disconnect()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">disconnect</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function disconnect():Boolean</code><p></p><p></p><p>
+		 
+		 
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true on successful start of the disconnect process
+		 
+		 </td></tr></table></div><a name="dispatchEvent()"></a><a name="dispatchEvent(flash.events.Event)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">dispatchEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>override public function dispatchEvent(event:Event):Boolean</code><p></p><p></p><p>
+ Overrides the default dispatch event to check if the developer id is valid.
+ If the id is invalid, the dispatch does not occur
+ </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">event</span>:Event</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code></td></tr></table></div><a name="dispose()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">dispose</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function dispose():void</code><p></p><p></p><p>
+		 <p>
+		 Disposes the extension and releases any allocated resources. Once this function 
+		 has been called, a call to <code>init</code> is neccesary again before any of the 
+		 extensions functionality will work.
+		 </p>
+		 </p></div><a name="getPerson()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getPerson</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function getPerson():<a href="../../../../com/distriqt/extension/googleplus/Person.html">Person</a></code><p></p><p></p><p>
+		 <p>
+		 Retrieves the information about the user who is signed in.
+		 </p>
+		 
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../com/distriqt/extension/googleplus/Person.html">Person</a></code> &mdash; The details about the user in a Person object or null if there is no user signed in
+		 
+		 </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="Person.html" target="">com.distriqt.extension.googleplus.Person</a></div></div><a name="getUserEmail()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getUserEmail</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function getUserEmail():String</code><p></p><p></p><p>
+		 <p>
+		 Retrieves the Google user's email
+		 </p>
+		 
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>String</code> &mdash; The Google user's email
+		 
+		 </td></tr></table></div><a name="getUserId()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getUserId</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function getUserId():String</code><p></p><p></p><p>
+		 <p>
+		 Retrieves the Google user ID
+		 </p>
+		 
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>String</code> &mdash; The Google user ID
+		 
+		 </td></tr></table></div><a name="init()"></a><a name="init(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">init</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function init(key:String):void</code><p></p><p></p><p>
+		 Initialises the extension class for use with the provided key.
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">key</span>:String</code></td></tr></table></p><br/><span class="label">Throws</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Error </code> &mdash; If there was a problem creating or accessing the extension, or if the key is invalid
+		 </td></tr></table></div><a name="initialise()"></a><a name="initialise(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">initialise</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function initialise(clientId:String):Boolean</code><p></p><p></p><p>
+		 <p>
+		 This function initialises the Google+ service. You should call this
+		 function once towards the beginning of your application.
+		 </p>
+		 
+		 <p>
+		 The clientId should be the iOS client ID from your applications configuration
+		 in the Google developers console. Make sure you use the iOS application. The 
+		 Android application is identified by the SHA1 fingerprint so the client id is 
+		 not needed on Android.
+		 </p>
+		 
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">clientId</span>:String</code> &mdash; The client ID for your application
+		 
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true if the initialisation was successful
+		 
+		 </td></tr></table></div><a name="isGooglePlusAppInstalled()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isGooglePlusAppInstalled</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function isGooglePlusAppInstalled():Boolean</code><p></p><p></p><p>
+		 <p>
+		 Determines whether the Google+ application is installed on the device.
+		 </p>
+		 <p>
+		 Note: this does not mean that the extension will not work, as the 
+		 Google+ SDK will fall back to Chrome and then the default browser
+		 to authenticate the user.
+		 </p>
+		 
+		 <p>Supported platforms:</p>
+		 <ul>
+		 <li>Android</li>
+		 </ul>
+		 
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true if the Google+ application is installed 
+		 
+		 </td></tr></table></div><a name="isSignedIn()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isSignedIn</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function isSignedIn():Boolean</code><p></p><p></p><p>
+		 <p>
+		 Determines if there is already a user signed into the application.
+		 </p>
+		 
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true if a user is signed in and false otherwise
+		 
+		 </td></tr></table></div><a name="share()"></a><a name="share(com.distriqt.extension.googleplus.Post)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">share</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function share(post:<a href="../../../../com/distriqt/extension/googleplus/Post.html">Post</a>):void</code><p></p><p></p><p>
+		 <p>
+		 Displays a native share dialog for the user to share a post to their Google+ circles.
+		 </p>
+		 
+		 <p>
+		 You should create a <code>Post</code> object to specify the prefilled parameters 
+		 for the share dialog and pass that to this function. 
+		 </p>
+		 
+		 <p>
+		 <b>Note</b>: 
+		 Your app must follow the <a href="http://developers.google.com/+/policies" target="">Google+ developer policies</a> 
+		 and <a href="http://developers.google.com/+/terms" target="">terms of service</a>, 
+		 including how your app might use this feature to incentivize sharing.
+		 </p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">post</span>:<a href="../../../../com/distriqt/extension/googleplus/Post.html">Post</a></code></td></tr></table></p></div><a name="signIn()"></a><a name="signIn(com.distriqt.extension.googleplus.SignInOptions)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">signIn</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function signIn(options:<a href="../../../../com/distriqt/extension/googleplus/SignInOptions.html">SignInOptions</a> = null):Boolean</code><p></p><p></p><p>
+		 <p>
+		 Starts the sign in process. An event will be dispatched when complete.
+		 </p>
+		  
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">options</span>:<a href="../../../../com/distriqt/extension/googleplus/SignInOptions.html">SignInOptions</a></code> (default = <code>null</code>)<code></code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true on successful start of the sign in process 
+		 			and false if a user was already signed in
+		 
+		 </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="../../../../com/distriqt/extension/googleplus/events/GooglePlusEvent.html#SIGN_IN_SUCCESS" target="">com.distriqt.extension.googleplus.events.GooglePlusEvent.SIGN_IN_SUCCESS</a><br/><a href="../../../../com/distriqt/extension/googleplus/events/GooglePlusEvent.html#SIGN_IN_FAILED" target="">com.distriqt.extension.googleplus.events.GooglePlusEvent.SIGN_IN_FAILED</a></div></div><a name="signOut()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">signOut</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function signOut():Boolean</code><p></p><p></p><p>
+		 <p>
+		 Starts the sign out process. An event will be dispatched when complete.
+		 </p>
+		 
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true on successful start of the sign out process 
+		 			and false if no user is signed in
+		 
+		 </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="../../../../com/distriqt/extension/googleplus/events/GooglePlusEvent.html#SIGN_OUT_SUCCESS" target="">com.distriqt.extension.googleplus.events.GooglePlusEvent.SIGN_OUT_SUCCESS</a><br/><a href="../../../../com/distriqt/extension/googleplus/events/GooglePlusEvent.html#SIGN_OUT_FAILED" target="">com.distriqt.extension.googleplus.events.GooglePlusEvent.SIGN_OUT_FAILED</a></div></div><div class="detailSectionHeader">Constant Detail</div><a name="constantDetail"></a><a name="EXT_CONTEXT_ID"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">EXT_CONTEXT_ID</td><td class="detailHeaderType">Constant</td></tr></table><div class="detailBody"><code>public static const EXT_CONTEXT_ID:String = com.distriqt.GooglePlus</code><p></p></div><a name="constantDetail"></a><a name="IMPLEMENTATION_DEFAULT"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">IMPLEMENTATION_DEFAULT</td><td class="detailHeaderType">Constant</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public static const IMPLEMENTATION_DEFAULT:String</code><p></p></div><a name="constantDetail"></a><a name="VERSION"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">VERSION</td><td class="detailHeaderType">Constant</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public static const VERSION:String = 1</code><p></p></div><a name="constantDetail"></a><a name="VERSION_DEFAULT"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">VERSION_DEFAULT</td><td class="detailHeaderType">Constant</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public static const VERSION_DEFAULT:String = 0</code><p></p></div><a name="includeExamplesSummary"></a><div class="detailSectionHeader">Examples</div><div class="detailBody">
+	 <p>
+	 The following example shows the simple process of initialisation and signing in a user
+	 </p>
+	 
+	 <div class="listing"><pre>
+     try
+     {
+         GooglePlus.init( APPLICATION_KEY );
+         GooglePlus.service.addEventListener( GooglePlusEvent.SIGN_IN_SUCCESS,     signIn_successHandler, false, 0, true );
+         GooglePlus.service.addEventListener( GooglePlusEvent.SIGN_IN_FAILED,     signIn_failedHandler, false, 0, true );
+         GooglePlus.service.addEventListener( GooglePlusEvent.SIGN_OUT_SUCCESS,    signOut_successHandler, false, 0, true );
+         GooglePlus.service.addEventListener( GooglePlusEvent.SIGN_OUT_FAILED,    signOut_failedHandler, false, 0, true );
+     
+         GooglePlus.service.initialise( CLIENT_ID );
+         GooglePlus.service.signIn();
+     }
+     catch (e:Error)
+     {
+     }
+     
+     ...
+     
+     private function signIn_successHandler( event:GooglePlusEvent ):void
+     {
+         var person:Person = GooglePlus.service.getPerson();
+         if (person != null)
+         {
+             trace( "Signed in as: " + person.displayName );
+         }
+     }
+     
+     private function signIn_failedHandler( event:GooglePlusEvent ):void
+     {
+     }
+     
+     private function signOut_successHandler( event:GooglePlusEvent ):void
+     {
+     }
+     
+     private function signOut_failedHandler( event:GooglePlusEvent ):void
+     {
+     }
+     </pre></div>
+	 
+	 
+	 
+	 
+	 
+	 </div><br/><br/><hr><br/><p></p><center class="copyright"><footer>Copyright <a href="http://distriqt.com" target="_top">distriqt</a> 2012</footer><br/>Fri Feb 20 2015, 11:44 PM +10:00  </center></div></body></html><!--Copyright distriqt 2012<br/>Fri Feb 20 2015, 11:44 PM +10:00  -->
