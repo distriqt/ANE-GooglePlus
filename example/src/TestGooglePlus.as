@@ -38,7 +38,7 @@ package
 	 */
 	public class TestGooglePlus extends Sprite
 	{
-		public static const DEV_KEY 	: String = "YOUR_DEVELOER_KEY";
+		public static const APP_KEY 	: String = "APPLICATION_KEY";
 		public static const CLIENT_ID 	: String = "YOUR_GOOGLE_API_CLIENT_ID";
 
 		
@@ -49,10 +49,10 @@ package
 		/**
 		 * Class constructor 
 		 */	
-		public function TestGooglePlus( devKey:String=DEV_KEY, clientId:String=CLIENT_ID )
+		public function TestGooglePlus( appKey:String=APP_KEY, clientId:String=CLIENT_ID )
 		{
 			super();
-			_devKey = devKey;
+			_appKey = appKey;
 			_clientId = clientId;
 			create();
 			init();
@@ -63,7 +63,7 @@ package
 		//	VARIABLES
 		//
 		
-		private var _devKey 	: String;
+		private var _appKey 	: String;
 		private var _clientId	: String;
 		private var _text		: TextField;
 		
@@ -92,7 +92,7 @@ package
 		{
 			try
 			{
-				GooglePlus.init( _devKey );
+				GooglePlus.init( _appKey );
 				
 				message( "GooglePlus Supported: " + GooglePlus.isSupported );
 				
