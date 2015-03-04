@@ -15,6 +15,7 @@
  */
 package
 {
+	import com.distriqt.extension.core.Core;
 	import com.distriqt.extension.googleplus.GooglePlus;
 	import com.distriqt.extension.googleplus.Person;
 	import com.distriqt.extension.googleplus.Post;
@@ -92,6 +93,7 @@ package
 		{
 			try
 			{
+				Core.init();
 				GooglePlus.init( _appKey );
 				
 				message( "GooglePlus Supported: " + GooglePlus.isSupported );
