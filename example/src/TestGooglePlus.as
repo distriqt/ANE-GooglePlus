@@ -165,10 +165,12 @@ package
 				switch (_state)
 				{
 					case 0:
+						message( "signIn" );
 						GooglePlus.service.signIn();
 						break;
 					
 					case 1:
+						message( "attempting a post" );
 						if (GooglePlus.service.isSignedIn())
 						{
 							var icon:Bitmap = new Icon() as Bitmap;
@@ -183,11 +185,17 @@ package
 						break;
 					
 					case 2:
+						message( "disconnect" );
+						GooglePlus.service.disconnect();
+						break;
+					
+					case 3: 
+						message( "signOut" );
 						GooglePlus.service.signOut();
 						break;
 				}
 			
-				_state++; if (_state > 2) _state = 0;
+				_state++; if (_state > 3) _state = 0;
 			}		
 		}
 		

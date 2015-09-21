@@ -1,5 +1,10 @@
 
 
+###### 2015.09.22
+
+Updated disconnect call to correctly disconnect the user from the app (resolves #8)
+
+
 ###### 2015.06.15
 
 Removed debug code from AS lib
