@@ -1,5 +1,11 @@
 
 
+###### 2016.05.12
+
+Updated SDK to the latest SignIn SDK (resolves #12) 
+Implemented access to the id Token (resolves #9)
+
+
 ###### 2015.09.22
 
 Updated disconnect call to correctly disconnect the user from the app (resolves #8)
