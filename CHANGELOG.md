@@ -1,5 +1,10 @@
 
 
+###### 2016.05.21
+
+iOS: Corrected 'Unexpected CFBundleExecutable Key' error (resolves #14)
+
+
 ###### 2016.05.12
 
 Updated SDK to the latest SignIn SDK (resolves #12) 

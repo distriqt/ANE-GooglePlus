@@ -27,9 +27,9 @@
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/spark_dmv.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_dmv.swc" useDefaultLinkType="false"/>
+          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_flashflexkit.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/air/applicationupdater_ui.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/air/airframework.swc" useDefaultLinkType="false"/>
-          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_flashflexkit.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/mobile/mobilecomponents.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_agent.swc" useDefaultLinkType="false"/>
         </excludedEntries>
@@ -52,22 +52,21 @@
   <buildCSSFiles/>
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
   <buildTargets>
-    <buildTarget buildTargetName="device" iosSettingsVersion="2" isCurrent="true" platformId="com.adobe.flexide.multiplatform.ios.platform" provisioningFile="/Users/marchbold/Dropbox/work/certs/distriqt_test_profile.mobileprovision" releasePackageType="">
-      <airSettings airCertificatePath="/Users/marchbold/Dropbox/work/certs/iPhoneDeveloper_MichaelArchbold_Certificates.p12" airTimestamp="true" anePathSet="true" version="1">
+    <buildTarget buildTargetName="device" iosSettingsVersion="2" isCurrent="true" platformId="com.adobe.flexide.multiplatform.ios.platform" provisioningFile="/Users/marchbold/Dropbox/work/certs/distriqt_test_distribution_profile.mobileprovision" releasePackageType="ipa-app-store">
+      <multiPlatformSettings enabled="true" hideAneLibSymbols="0" includePlatformLibs="false" platformID="com.adobe.flexide.multiplatform.ios.platform" reducedSizePackaging="false" version="1"/>
+      <airSettings airCertificatePath="/Users/marchbold/Dropbox/work/certs/distribution/distriqt_distribution.p12" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths>
           <anePathEntry path="${DOCUMENTS}/extensions/core/trunk/bin/com.distriqt.Core.ane"/>
           <anePathEntry path="${DOCUMENTS}/extensions/googleplus/trunk/bin/com.distriqt.GooglePlus.ane"/>
           <anePathEntry path="${DOCUMENTS}/extensions/androidsupport/trunk/bin/com.distriqt.AndroidSupport.ane"/>
           <anePathEntry path="${DOCUMENTS}/extensions/googleplayservices/trunk/bin/com.distriqt.GooglePlayServices.ane"/>
-          <anePathEntry path="${DOCUMENTS}/extensions/googleanalytics/trunk/bin/com.distriqt.GoogleAnalytics.ane"/>
         </anePaths>
         <newLaunchParams/>
         <modifiedLaunchParams/>
         <newPackagingParams/>
         <modifiedPackagingParams/>
       </airSettings>
-      <multiPlatformSettings enabled="true" hideAneLibSymbols="0" includePlatformLibs="false" platformID="com.adobe.flexide.multiplatform.ios.platform" reducedSizePackaging="false" version="1"/>
       <actionScriptSettings version="1"/>
     </buildTarget>
     <buildTarget airDownloadURL="" androidSettingsVersion="2" buildTargetName="device" isCurrent="true" platformId="com.adobe.flexide.multiplatform.android.platform">
