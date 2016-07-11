@@ -161,6 +161,8 @@ package com.distriqt.test.googleplus
 		private function signInHandler( event:GooglePlusEvent ):void
 		{
 			message( event.type + "::"+event.user.toString() );
+			message( "email: " + GooglePlus.service.getUserEmail() );
+			message( "userid: " + GooglePlus.service.getUserId() );
 			
 			message( "token: "+event.user.authentication.idToken );
 			message( "serverAuthToken: " +event.user.authentication.serverAuthToken );

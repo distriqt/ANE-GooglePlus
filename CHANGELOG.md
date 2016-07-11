@@ -1,5 +1,10 @@
 
 
+######  2016.07.11
+
+Corrected getUserEmail function (resolves #18)
+
+
 ###### 2016.05.21
 
 iOS: Corrected 'Unexpected CFBundleExecutable Key' error (resolves #14)
