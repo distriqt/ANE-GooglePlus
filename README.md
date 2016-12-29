@@ -60,4 +60,4 @@ You can purchase a license for using this extension:
 distriqt retains all copyright.
 
 
-[[images/promo.png]]
+![](images/promo.png)

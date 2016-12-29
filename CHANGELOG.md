@@ -7,6 +7,11 @@ Updated documentation
 
 ###### 2016.12.29 [v2.2.004]
 
+Updated documentation
+
+
+###### 2016.12.29 [v2.2.004]
+
 Updated to latest SDKs + documentation
 
 
