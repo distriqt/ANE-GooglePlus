@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<application xmlns="http://ns.adobe.com/air/application/4.0">
+<application xmlns="http://ns.adobe.com/air/application/24.0">
 	<id>com.distriqt.test</id>
 	<filename>TestGooglePlus</filename>
 	<name>TestGooglePlus</name>
@@ -7,10 +7,10 @@
 
 	<initialWindow>
 		<content>[This value will be overwritten by Flash Builder in the output app.xml]</content>
+		<visible>true</visible>
 		<autoOrients>false</autoOrients>
-        <fullScreen>false</fullScreen>
-        <visible>true</visible>
-    </initialWindow>
+		<fullScreen>false</fullScreen>
+	</initialWindow>
 
 	<icon>
 		<image16x16>icons/icon16x16.png</image16x16>
@@ -25,18 +25,22 @@
 		<image512x512>icons/icon512x512.png</image512x512>
 	</icon>
 
+			
 	<iPhone>
 		<InfoAdditions><![CDATA[
+			
 			<key>UIDeviceFamily</key>
 			<array>
 				<string>1</string>
+				<string>2</string>
 			</array>
 			
 			<key>CFBundleURLTypes</key>
 			<array>
 				<dict>
 					<key>CFBundleURLSchemes</key>
-					<array>
+					<array> 
+						<string>com.googleusercontent.apps.616489336300-11jtfbdshdgdgs0gi36vicf7m7o02cqi</string>
 						<string>com.distriqt.test</string>
 					</array>
 					<key>CFBundleURLName</key>
@@ -46,31 +50,44 @@
 			
 		]]></InfoAdditions>
 		<requestedDisplayResolution>high</requestedDisplayResolution>
-		<Entitlements>
-			<![CDATA[
-			]]>
-		</Entitlements>
+		<Entitlements><![CDATA[
+		]]></Entitlements>
 	</iPhone>
-    
+	
+	
 	<android>
 		<manifestAdditions><![CDATA[
 			<manifest android:installLocation="auto">
+				<uses-sdk android:minSdkVersion="11" android:targetSdkVersion="23"/>
+				
 				<uses-permission android:name="android.permission.INTERNET"/>
 				<uses-permission android:name="android.permission.GET_ACCOUNTS" />
-				<uses-permission android:name="android.permission.USE_CREDENTIALS" />
-				<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+				<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 				
 				<application>
+				
 					<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+				
 					<activity android:name="com.distriqt.extension.googleplus.activities.GooglePlusActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+					
+					<activity android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+				
 				</application>
-			
+				
 			</manifest>
 		]]></manifestAdditions>
 	</android>
-    
-    <extensions>
-        <extensionID>com.distriqt.GooglePlus</extensionID>
-    </extensions>
-    
+	
+	
+	<extensions>
+		<extensionID>com.distriqt.GooglePlus</extensionID>
+
+		<extensionID>com.distriqt.Core</extensionID>
+		<extensionID>com.distriqt.androidsupport.V4</extensionID>
+
+		<extensionID>com.distriqt.playservices.Base</extensionID>
+		<extensionID>com.distriqt.playservices.Auth</extensionID>
+		<extensionID>com.distriqt.playservices.Plus</extensionID>
+	</extensions>
+	
 </application>

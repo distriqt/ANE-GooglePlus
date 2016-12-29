@@ -8,7 +8,6 @@
  *                           \/ 
  * http://distriqt.com
  *
- * @file   		TestGoogleIdentity.as
  * @brief  		
  * @author 		"Michael Archbold (ma&#64;distriqt.com)"
  * @created		02/03/2016
@@ -27,8 +26,6 @@ package
 	import starling.core.Starling;
 	
 	
-	/**	
-	 */
 	public class TestGooglePlus extends Sprite
 	{
 		////////////////////////////////////////////////////////

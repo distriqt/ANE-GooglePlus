@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<application xmlns="http://ns.adobe.com/air/application/21.0">
+<application xmlns="http://ns.adobe.com/air/application/24.0">
 	<id>com.distriqt.test</id>
 	<filename>TestGooglePlus</filename>
 	<name>TestGooglePlus</name>
@@ -11,7 +11,7 @@
 		<renderMode>direct</renderMode>
 		<autoOrients>false</autoOrients>
 		<fullScreen>false</fullScreen>
-    </initialWindow>
+	</initialWindow>
 
 	<icon>
 		<image16x16>icons/icon16x16.png</image16x16>
@@ -29,7 +29,7 @@
 			
 	<iPhone>
 		<InfoAdditions><![CDATA[
-		    
+			
 			<key>UIDeviceFamily</key>
 			<array>
 				<string>1</string>
@@ -41,7 +41,7 @@
 				<dict>
 					<key>CFBundleURLSchemes</key>
 					<array> 
-						<string>com.googleusercontent.apps.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</string>
+						<string>com.googleusercontent.apps.616489336300-11jtfbdshdgdgs0gi36vicf7m7o02cqi</string>
 						<string>com.distriqt.test</string>
 					</array>
 					<key>CFBundleURLName</key>
@@ -52,13 +52,9 @@
 		]]></InfoAdditions>
 		<requestedDisplayResolution>high</requestedDisplayResolution>
 		<Entitlements><![CDATA[
-			
-			<key>get-task-allow</key>
-		    <true/>
-		    
 		]]></Entitlements>
 	</iPhone>
-	    
+	
 	
 	<android>
 		<manifestAdditions><![CDATA[
@@ -82,13 +78,17 @@
 			</manifest>
 		]]></manifestAdditions>
 	</android>
-    
+	
 	
 	<extensions>
-		<extensionID>com.distriqt.Core</extensionID>
 		<extensionID>com.distriqt.GooglePlus</extensionID>
-		<extensionID>com.distriqt.AndroidSupport</extensionID>
-		<extensionID>com.distriqt.GooglePlayServices</extensionID>
-    </extensions>
-    
+
+		<extensionID>com.distriqt.Core</extensionID>
+		<extensionID>com.distriqt.androidsupport.V4</extensionID>
+
+		<extensionID>com.distriqt.playservices.Base</extensionID>
+		<extensionID>com.distriqt.playservices.Auth</extensionID>
+		<extensionID>com.distriqt.playservices.Plus</extensionID>
+	</extensions>
+	
 </application>

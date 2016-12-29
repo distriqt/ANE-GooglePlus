@@ -1,5 +1,10 @@
 
 
+###### 2016.12.29 [v2.2.004]
+
+Updated to latest SDKs + documentation
+
+
 ######  2016.07.11
 
 Corrected getUserEmail function (resolves #18)

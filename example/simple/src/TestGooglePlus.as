@@ -17,6 +17,7 @@ package
 {
 	import com.distriqt.extension.core.Core;
 	import com.distriqt.extension.googleplus.GooglePlus;
+	import com.distriqt.extension.googleplus.GooglePlusOptions;
 	import com.distriqt.extension.googleplus.Person;
 	import com.distriqt.extension.googleplus.Post;
 	import com.distriqt.extension.googleplus.events.GooglePlusEvent;
@@ -39,8 +40,8 @@ package
 	 */
 	public class TestGooglePlus extends Sprite
 	{
-		public static const APP_KEY 	: String = "APPLICATION_KEY";
-		public static const CLIENT_ID 	: String = "YOUR_GOOGLE_API_CLIENT_ID";
+		public static var APP_KEY 	: String = "APPLICATION_KEY";
+		public static var CLIENT_ID 	: String = "YOUR_GOOGLE_API_CLIENT_ID";
 
 		
 		[Embed("test.png")]
@@ -50,11 +51,9 @@ package
 		/**
 		 * Class constructor 
 		 */	
-		public function TestGooglePlus( appKey:String=APP_KEY, clientId:String=CLIENT_ID )
+		public function TestGooglePlus()
 		{
 			super();
-			_appKey = appKey;
-			_clientId = clientId;
 			create();
 			init();
 		}
@@ -64,8 +63,6 @@ package
 		//	VARIABLES
 		//
 		
-		private var _appKey 	: String;
-		private var _clientId	: String;
 		private var _text		: TextField;
 		
 		
@@ -94,7 +91,7 @@ package
 			try
 			{
 				Core.init();
-				GooglePlus.init( _appKey );
+				GooglePlus.init( APP_KEY );
 				
 				message( "GooglePlus Supported: " + GooglePlus.isSupported );
 				
@@ -118,7 +115,9 @@ package
 						GooglePlus.service.addEventListener( GooglePlusShareEvent.SHARE_CANCELLED,	share_cancelledHandler, false, 0, true );
 						GooglePlus.service.addEventListener( GooglePlusShareEvent.SHARE_FAILED,		share_failedHandler, false, 0, true );
 						
-						GooglePlus.service.initialise( _clientId );
+						var options:GooglePlusOptions = new GooglePlusOptions( CLIENT_ID );
+						
+						GooglePlus.service.setup( options );
 					}
 				}
 				
