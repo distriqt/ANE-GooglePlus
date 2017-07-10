@@ -17,7 +17,7 @@
 >
 
 
-The [Google Plus](http://airnativeextensions.com/extension/com.distriqt.GooglePlus) extension 
+The [Google Plus](https://airnativeextensions.com/extension/com.distriqt.GooglePlus) extension 
 gives you access to the Google+ API including, sign in, out and disconnect functionality along 
 with the ability to share a post via the Google Share Dialog.
 
@@ -30,10 +30,12 @@ We provide complete guides to get you up and running with asset selection quickl
 
 ### Features
 
-- Setup the Google+ API using your client IDs;
-- Sign-in/out and disconnect users;
-- Prepopulate a Share dialog;
-- Access to the `idToken` for user authentication
+- User Sign in, out and disconnect;
+- Access to the user profile information;
+- Use the G+ Share dialog to post to the user stream;
+- Access to the `idToken` for user authentication;
+- Your code works across iOS and Android with no modifications;
+- Sample project code and ASDocs reference
 
 As with all our extensions you get access to a year of support and updates as we are continually 
 improving and updating the extensions for OS updates and feature requests.
